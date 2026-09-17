@@ -384,6 +384,14 @@ footer span {
 
 #idiomas .contenido-pantalla {
     justify-content: center;
+    padding-top: 95px;
+}
+
+#idiomas .logo-pequeno {
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    margin-bottom: 0;
 }
 
 .tarjeta-idiomas {

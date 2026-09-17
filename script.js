@@ -37,13 +37,13 @@ botonComenzar.addEventListener("click", function() {
 
 function iniciarAnuncio() {
 
-    let segundos = 5;
+    let segundos = 7;
 
     const contador = document.getElementById("contador");
     const botonSaltar = document.getElementById("botonSaltar");
 
     contador.textContent = "Podrás continuar en:";
-    botonSaltar.textContent = "5 segundos";
+    botonSaltar.textContent = "7 segundos";
 
     const temporizador = setInterval(function() {
 
