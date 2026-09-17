@@ -42,21 +42,23 @@ function iniciarAnuncio() {
     const contador = document.getElementById("contador");
     const botonSaltar = document.getElementById("botonSaltar");
 
-    contador.textContent = "Podrás continuar en " + segundos + " segundos";
+    contador.textContent = "Podrás continuar en:";
+    botonSaltar.textContent = "5 segundos";
 
     const temporizador = setInterval(function() {
 
         segundos--;
 
-        if (segundos > 0) {
+       if (segundos > 0) {
 
-            contador.textContent =
-                "Podrás continuar en " + segundos + " segundos";
+    contador.textContent =
+        "Podrás continuar en:";
 
-            botonSaltar.textContent =
-                " + segundos + ";
+    botonSaltar.textContent = 
+        segundos + (segundos === 1 ? " segundo" : " segundos");
 
-        } else {
+}
+         else {
 
             clearInterval(temporizador);
 
