@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SounTrip | La voz que te lleva</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <main class="contenedor-app">
+
+        <!-- ==============================
+             PANTALLA DE INICIO
+             ============================== -->
+        <section id="inicio" class="pantalla pantalla-inicio activa">
+
+            <div class="fondo-inicio"></div>
+            <div class="capa-oscura"></div>
+
+            <div class="contenido-inicio">
+
+                <img
+                    src="imagenes/logo.jpg"
+                    alt="Logo de SounTrip"
+                    class="logo logo-inicio"
+                >
+
+                <div class="bienvenida">
+                    <p class="etiqueta">TU EXPERIENCIA TURÍSTICA</p>
+
+                    <h1>La Puerta del Diablo</h1>
+
+                    <p class="descripcion">
+                        Descubre la historia, las leyendas y los paisajes
+                        que hacen de este lugar una experiencia inolvidable.
+                    </p>
+
+                    <button id="botonComenzar" class="boton-principal">
+                        Comenzar experiencia <span>→</span>
+                    </button>
+                </div>
+
+                <footer>
+                    <strong>SounTrip</strong>
+                    <span>La voz que te lleva</span>
+                </footer>
+
+            </div>
+        </section>
+
+
+        <!-- ==============================
+             PANTALLA DEL ANUNCIO
+             ============================== -->
+        <section id="anuncio" class="pantalla pantalla-anuncio">
+
+            <div class="contenido-anuncio">
+
+                <p class="etiqueta">RECOMENDACIÓN LOCAL</p>
+
+                <h2>Ikatú Restaurante Café</h2>
+
+                <p class="descripcion-anuncio">
+                    Disfruta de una experiencia gastronómica cerca de tu destino.
+                </p>
+
+                <div class="anuncio-imagen">
+                    <a
+                        href="https://maps.app.goo.gl/QQ6EX1XhoLj4AXaA8?g_st=iw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="imagenes/anuncio.jpeg"
+                            alt="Ikatú Restaurante Café"
+                            class="imagen-anuncio"
+                        >
+                    </a>
+                </div>
+
+                <p class="texto-mapa">
+                    📍 Toca la imagen para ver la ubicación
+                </p>
+
+                <p id="contador" class="contador">
+                    Preparando experiencia...
+                </p>
+
+                <button
+                    id="botonSaltar"
+                    class="boton-saltar"
+                    disabled
+                >
+                    Podrás continuar en 5 segundos
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ==============================
+             PANTALLA DE IDIOMAS
+             ============================== -->
+        <section id="idiomas" class="pantalla pantalla-fondo">
+
+            <div class="fondo-destino"></div>
+            <div class="capa-oscura"></div>
+
+            <div class="contenido-pantalla">
+
+                <img
+                    src="imagenes/logo.jpg"
+                    alt="SounTrip"
+                    class="logo-pequeno"
+                >
+
+                <div class="tarjeta-idiomas">
+
+                    <p class="etiqueta">CHOOSE YOUR LANGUAGE</p>
+
+                    <h2>Which language do you prefer?</h2>
+
+                    <div class="idiomas-botones">
+
+                        <button class="boton-idioma" data-idioma="es">
+                            🇪🇸 <span>Español</span>
+                        </button>
+
+                        <button class="boton-idioma" data-idioma="en">
+                            🇬🇧 <span>English</span>
+                        </button>
+
+                        <button class="boton-idioma" data-idioma="fr">
+                            🇫🇷 <span>Français</span>
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================
+             PANTALLA DE LA GUÍA
+             ============================== -->
+        <section id="guia" class="pantalla pantalla-fondo guia-fondo">
+
+            <div class="fondo-destino"></div>
+            <div class="capa-oscura guia-capa"></div>
+
+            <div class="contenido-pantalla contenido-guia">
+
+                <img
+                    src="imagenes/logo.jpg"
+                    alt="SounTrip"
+                    class="logo-pequeno"
+                >
+
+                <div class="cabecera-guia">
+                    <p id="tituloGuia" class="etiqueta">AUTOGUÍA TURÍSTICA</p>
+
+<h2 id="nombreDestino">La Puerta del Diablo</h2>
+
+                    <p id="idiomaSeleccionado" class="idioma-seleccionado">
+                        🇪🇸 Español
+                    </p>
+                </div>
+
+                <img
+                    src="imagenes/fondoc.jpeg"
+                    alt="La Puerta del Diablo"
+                    class="foto-destino"
+                >
+
+                <!-- Reproductor de audio -->
+                <div class="reproductor">
+
+                    <div class="reproductor-titulo">
+                        <div class="icono-audio">🎧</div>
+                        <div>
+                            <p id="etiquetaAudio" class="mini-etiqueta">AUDIO DE LA EXPERIENCIA</p>
+                            <h3 id="tituloAudio">Escucha la guía</h3>
+                        </div>
+                    </div>
+
+                    <audio id="audioGuia" controls>
+                        <source
+                            id="fuenteAudio"
+                            src="audios/español/te-amo.mp3"
+                            type="audio/mpeg"
+                        >
+                        Tu navegador no puede reproducir este audio.
+                    </audio>
+
+                </div>
+
+                <!-- Información del lugar -->
+<div class="informacion-guia">
+
+    <article class="bloque-info">
+
+        <h3 id="tituloSobre">
+            Sobre este lugar
+        </h3>
+
+        <p id="textoSobre">
+            La Puerta del Diablo es uno de los destinos turísticos
+            más reconocidos de El Salvador. Sus formaciones rocosas
+            y sus vistas panorámicas hacen de este lugar una parada
+            especial para quienes desean conocer los paisajes del país.
+        </p>
+
+    </article>
+
+
+    <article class="bloque-info">
+
+        <h3 id="tituloHistoria">
+            Historia
+        </h3>
+
+        <p id="textoHistoria">
+            En esta sección conocerás la historia de La Puerta del
+            Diablo y algunos de los acontecimientos que forman parte
+            de la identidad de este lugar.
+        </p>
+
+    </article>
+
+
+    <article class="bloque-info">
+
+        <h3 id="tituloLeyendas">
+            Leyendas
+        </h3>
+
+        <p id="textoLeyendas">
+            La Puerta del Diablo también está relacionada con
+            diferentes relatos y leyendas populares que han sido
+            transmitidos a través del tiempo.
+        </p>
+
+    </article>
+
+
+    <article class="bloque-info">
+
+        <h3 id="tituloDatos">
+            Datos interesantes
+        </h3>
+
+        <ul class="datos-interesantes">
+
+            <li>
+                🌄
+                <span id="dato1">
+                    Vistas panorámicas del paisaje
+                </span>
+            </li>
+
+            <li>
+                📍
+                <span id="dato2">
+                    Destino turístico de El Salvador
+                </span>
+            </li>
+
+            <li>
+                🥾
+                <span id="dato3">
+                    Ideal para disfrutar del entorno natural
+                </span>
+            </li>
+
+        </ul>
+
+    </article>
+
+</div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

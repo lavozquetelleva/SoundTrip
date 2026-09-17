@@ -1,0 +1,614 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7fafc;
+    color: #073b63;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+
+.contenedor-app {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================================
+   PANTALLAS
+   ========================================= */
+
+.pantalla {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.pantalla.activa {
+    display: flex;
+}
+
+/* =========================================
+   ELEMENTOS GENERALES
+   ========================================= */
+
+.etiqueta {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #b8c879;
+    margin-bottom: 10px;
+}
+
+.logo {
+    display: block;
+    object-fit: contain;
+}
+
+.logo-pequeno {
+    width: 105px;
+    max-height: 55px;
+    object-fit: contain;
+    object-position: left center;
+    align-self: flex-start;
+    margin-bottom: 18px;
+}
+
+.capa-oscura {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 30, 55, 0.42);
+    z-index: 1;
+}
+
+/* =========================================
+   INICIO
+   ========================================= */
+
+.pantalla-inicio {
+    align-items: stretch;
+    justify-content: center;
+    color: white;
+}
+
+.fondo-inicio {
+    position: absolute;
+    inset: 0;
+    background-image: url("imagenes/puerta-del-diablo.jpeg");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.pantalla-inicio .capa-oscura {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 35, 65, 0.28),
+        rgba(0, 35, 65, 0.66)
+    );
+}
+
+.contenido-inicio {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-inicio {
+    width: 185px;
+    height: auto;
+    margin-bottom: 35px;
+    border-radius: 12px;
+}
+
+.bienvenida {
+    width: 100%;
+    margin: auto 0;
+}
+
+.bienvenida .etiqueta {
+    color: #d5e39a;
+}
+
+.bienvenida h1 {
+    color: white;
+    font-size: 33px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.descripcion {
+    max-width: 350px;
+    margin: 0 auto 28px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.boton-principal {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 22px;
+    border: none;
+    border-radius: 50px;
+    background: #1596c5;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.boton-principal span {
+    margin-left: 5px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 35px;
+    color: white;
+}
+
+footer strong {
+    font-size: 13px;
+}
+
+footer span {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/* =========================================
+   ANUNCIO - ESTILO TURÍSTICO CREATIVO
+   ========================================= */
+
+.pantalla-anuncio {
+    background:
+        radial-gradient(circle at 8% 8%, rgba(126, 148, 80, 0.13) 0 18px, transparent 19px),
+        radial-gradient(circle at 92% 92%, rgba(21, 150, 197, 0.10) 0 22px, transparent 23px),
+        #f3f0e6;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 18px;
+}
+
+/* Decoraciones de hojas en las esquinas */
+.pantalla-anuncio::before,
+.pantalla-anuncio::after {
+    position: absolute;
+    z-index: 0;
+    font-size: 42px;
+    line-height: 1;
+    opacity: 0.48;
+    pointer-events: none;
+}
+
+.pantalla-anuncio::before {
+    content: "🌿";
+    top: 10px;
+    left: 7px;
+    transform: rotate(-18deg);
+}
+
+.pantalla-anuncio::after {
+    content: "🌿";
+    right: 7px;
+    bottom: 10px;
+    transform: rotate(162deg);
+}
+
+.contenido-anuncio {
+    width: 100%;
+    max-width: 400px;
+    padding: 28px 22px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 254, 247, 0.97);
+    border: 1px solid rgba(126, 148, 80, 0.28);
+    border-radius: 28px;
+    box-shadow:
+        0 14px 35px rgba(7, 59, 99, 0.14),
+        0 2px 8px rgba(7, 59, 99, 0.06);
+}
+
+/* Dos detalles decorativos adicionales dentro de la tarjeta */
+.contenido-anuncio::before,
+.contenido-anuncio::after {
+    content: "✦";
+    position: absolute;
+    color: #b8c879;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.contenido-anuncio::before {
+    top: 12px;
+    left: 16px;
+}
+
+.contenido-anuncio::after {
+    right: 16px;
+    bottom: 12px;
+}
+
+.contenido-anuncio .etiqueta {
+    display: inline-block;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+    border-radius: 30px;
+    background: #b8c879;
+    color: white;
+    font-size: 9px;
+    letter-spacing: 1.3px;
+    box-shadow: 0 4px 10px rgba(126, 148, 80, 0.18);
+}
+
+.contenido-anuncio h2 {
+    font-size: 27px;
+    line-height: 1.15;
+    color: #073b63;
+    margin-bottom: 8px;
+}
+
+.descripcion-anuncio {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #526777;
+    margin: 0 auto 18px;
+    max-width: 310px;
+}
+
+.anuncio-imagen {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #e8f4f8;
+    border: 3px solid white;
+    box-shadow:
+        0 8px 22px rgba(7, 59, 99, 0.16),
+        0 0 0 1px rgba(7, 59, 99, 0.08);
+}
+
+.anuncio-imagen a {
+    display: block;
+}
+
+.imagen-anuncio {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.texto-mapa {
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1596c5;
+}
+
+.contador {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #526777;
+}
+
+.boton-saltar {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 12px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 50px;
+    background: #073b63;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 7px 16px rgba(7, 59, 99, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-saltar:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(7, 59, 99, 0.22);
+}
+
+.boton-saltar:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   FONDO PARA IDIOMAS Y GUÍA
+   ========================================= */
+
+.pantalla-fondo {
+    color: white;
+}
+
+.fondo-destino {
+    position: absolute;
+    inset: 0;
+    background-image: url("imagenes/imagenp.jpeg");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.pantalla-fondo .capa-oscura {
+    background: rgba(0, 35, 65, 0.48);
+}
+
+.contenido-pantalla {
+    width: 100%;
+    min-height: 100vh;
+    padding: 28px 22px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================
+   IDIOMAS
+   ========================================= */
+
+#idiomas .contenido-pantalla {
+    justify-content: center;
+}
+
+.tarjeta-idiomas {
+    width: 100%;
+    padding: 28px 22px 25px;
+    border-radius: 24px;
+    background: rgba(4, 43, 70, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(6px);
+    text-align: center;
+}
+
+.tarjeta-idiomas .etiqueta {
+    color: #d5e39a;
+}
+
+.tarjeta-idiomas h2 {
+    color: white;
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 27px;
+}
+
+.idiomas-botones {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.boton-idioma {
+    width: 100%;
+    padding: 13px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50px;
+    background: rgba(10, 104, 151, 0.58);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.boton-idioma span {
+    flex: 1;
+}
+
+/* =========================================
+   GUÍA
+   ========================================= */
+
+.guia-fondo .fondo-destino {
+    background-position: center top;
+}
+
+.guia-capa {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 31, 55, 0.42) 0%,
+        rgba(0, 31, 55, 0.58) 34%,
+        rgba(247, 250, 252, 0.97) 62%,
+        rgba(247, 250, 252, 1) 100%
+    ) !important;
+}
+
+.contenido-guia {
+    align-items: stretch;
+    padding: 25px 20px 35px;
+}
+
+.cabecera-guia {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cabecera-guia .etiqueta {
+    color: #d5e39a;
+}
+
+.cabecera-guia h2 {
+    color: white;
+    font-size: 27px;
+    line-height: 1.15;
+    margin-bottom: 9px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.idioma-seleccionado {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.88);
+    color: #073b63;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.foto-destino {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    margin-bottom: 13px;
+    box-shadow: 0 8px 20px rgba(0, 30, 55, 0.22);
+}
+
+.reproductor {
+    width: 100%;
+    padding: 15px;
+    border-radius: 16px;
+    background: rgba(2, 45, 75, 0.95);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 30, 55, 0.18);
+}
+
+.reproductor-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.icono-audio {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #1596c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.mini-etiqueta {
+    font-size: 8px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin-bottom: 2px;
+}
+
+.reproductor h3 {
+    font-size: 14px;
+}
+
+.reproductor audio {
+    width: 100%;
+    height: 38px;
+}
+
+.informacion-guia {
+    width: 100%;
+    margin-top: 18px;
+    padding: 20px 16px 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #073b63;
+    box-shadow: 0 6px 18px rgba(7, 59, 99, 0.08);
+    text-align: left;
+}
+
+.bloque-info + .bloque-info {
+    margin-top: 23px;
+}
+
+.informacion-guia h3 {
+    font-size: 18px;
+    color: #073b63;
+    margin-bottom: 9px;
+}
+
+.informacion-guia p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #526777;
+}
+
+.datos-interesantes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.datos-interesantes li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 12px;
+    background: #eef7fa;
+    border-radius: 11px;
+    color: #073b63;
+    font-size: 13px;
+}
+
+.datos-interesantes li span {
+    flex: 1;
+}
+
+/* =========================================
+   AJUSTES PARA CELULARES PEQUEÑOS
+   ========================================= */
+
+@media (max-height: 700px) {
+    .logo-inicio {
+        width: 145px;
+        margin-bottom: 20px;
+    }
+
+    .bienvenida h1 {
+        font-size: 28px;
+    }
+
+    .descripcion {
+        margin-bottom: 20px;
+    }
+
+    .tarjeta-idiomas {
+        padding: 22px 18px;
+    }
+
+    .foto-destino {
+        height: 175px;
+    }
+}
