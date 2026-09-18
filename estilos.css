@@ -70,6 +70,36 @@ body {
     margin-bottom: 18px;
 }
 
+.marca-pequena {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.marca-pequena strong {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -1.2px;
+    color: #feffff;
+}
+
+.marca-pequena span {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #35a9d6;
+    margin-top: 2px;
+}
+
 .capa-oscura {
     position: absolute;
     inset: 0;
@@ -387,7 +417,7 @@ footer span {
     padding-top: 95px;
 }
 
-#idiomas .logo-pequeno {
+#idiomas .marca-pequena {
     position: absolute;
     top: 24px;
     left: 22px;
