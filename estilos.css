@@ -650,3 +650,128 @@ footer span {
         height: 175px;
     }
 }
+
+/* =========================================
+   MENÚ DE IDIOMA - PANTALLA DE AUTOGUÍA
+   ========================================= */
+
+#guia .marca-guia {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#guia .marca-guia .marca-pequena {
+    margin-bottom: 0;
+}
+
+#guia .boton-menu-idioma {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 0;
+    cursor: pointer;
+}
+
+#guia .boton-menu-idioma span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: white;
+}
+
+#guia .boton-menu-idioma:active {
+    transform: scale(0.95);
+}
+
+/* =========================================
+   TARJETA DEL MENÚ DE IDIOMAS
+   ========================================= */
+
+#guia .menu-idiomas {
+    position: absolute;
+    top: 78px;
+    right: 20px;
+    width: 180px;
+
+    padding: 10px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+
+    z-index: 100;
+
+    display: none;
+}
+
+#guia .menu-idiomas.abierto {
+    display: block;
+}
+
+#guia .encabezado-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4px 6px 9px;
+
+    color: #073b63;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#guia #cerrarMenuIdioma {
+    border: none;
+    background: transparent;
+
+    color: #073b63;
+    font-size: 24px;
+    line-height: 1;
+
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+#guia .opcion-idioma-menu {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 9px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: transparent;
+
+    color: #073b63;
+    font-size: 14px;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+#guia .opcion-idioma-menu:hover {
+    background: rgba(53, 169, 214, 0.12);
+}
+
+#guia .opcion-idioma-menu:active {
+    transform: scale(0.98);
+}

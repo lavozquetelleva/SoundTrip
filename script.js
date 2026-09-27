@@ -94,6 +94,8 @@ const audioGuia = document.getElementById("audioGuia");
 
 const fuenteAudio = document.getElementById("fuenteAudio");
 
+const tituloMenuIdioma = document.querySelector("#guia .encabezado-menu span");
+
 // =========================================
 // TEXTOS DE LA GUÍA POR IDIOMA
 // =========================================
@@ -225,6 +227,15 @@ function cambiarTextoGuia(idioma) {
 
     const texto = textosGuia[idioma];
 
+      if (idioma === "es") {
+        tituloMenuIdioma.textContent = "Idioma";
+    } else if (idioma === "en") {
+        tituloMenuIdioma.textContent = "Language";
+    } else if (idioma === "fr") {
+        tituloMenuIdioma.textContent = "Langue";
+    }
+
+
     document.getElementById("tituloGuia").textContent =
         texto.tituloGuia;
 
@@ -321,6 +332,68 @@ cambiarTextoGuia(idioma);
 
         // Mostrar la pantalla de la guía
         mostrarPantalla("guia");
+
+    });
+
+});
+
+// =========================================
+// MENÚ DE IDIOMAS EN LA AUTOGUÍA
+// =========================================
+
+const botonMenuIdioma = document.getElementById("botonMenuIdioma");
+const menuIdiomas = document.getElementById("menuIdiomas");
+const cerrarMenuIdioma = document.getElementById("cerrarMenuIdioma");
+
+botonMenuIdioma.addEventListener("click", () => {
+    menuIdiomas.classList.toggle("abierto");
+});
+
+cerrarMenuIdioma.addEventListener("click", () => {
+    menuIdiomas.classList.remove("abierto");
+});
+
+// =========================================
+// CAMBIAR IDIOMA DESDE EL MENÚ
+// =========================================
+
+const opcionesIdiomaMenu = document.querySelectorAll(".opcion-idioma-menu");
+
+opcionesIdiomaMenu.forEach(function(opcion) {
+
+    opcion.addEventListener("click", function() {
+
+        const idioma = opcion.dataset.idioma;
+
+        let rutaAudio = "";
+
+        if (idioma === "es") {
+            rutaAudio = "audios/español/audio-español.mp4";
+        }
+
+        if (idioma === "en") {
+            rutaAudio = "audios/english/audio-english.mp4";
+        }
+
+        if (idioma === "fr") {
+            rutaAudio = "audios/français/frances.mp3";
+        }
+
+        // Detener el audio actual
+        audioGuia.pause();
+        audioGuia.currentTime = 0;
+
+        // Cambiar el archivo de audio
+        fuenteAudio.src = rutaAudio;
+
+        // Recargar el nuevo audio
+        audioGuia.load();
+
+        // Cambiar todos los textos de la guía
+        cambiarTextoGuia(idioma);
+
+        // Cerrar el menú
+        menuIdiomas.classList.remove("abierto");
 
     });
 
