@@ -286,7 +286,7 @@ botonesIdioma.forEach(function(boton) {
 
             idiomaSeleccionado.textContent = "Español";
 
-            rutaAudio = "audios/español/audio-español.mp4";
+            rutaAudio = "audios/español/audio-español.mp3";
 
         }
 
@@ -294,7 +294,7 @@ botonesIdioma.forEach(function(boton) {
 
             idiomaSeleccionado.textContent = "English";
 
-            rutaAudio = "audios/english/audio-english.mp4";
+            rutaAudio = "audios/english/audio-english.mp3";
 
         }
 
