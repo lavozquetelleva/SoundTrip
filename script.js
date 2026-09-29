@@ -313,7 +313,7 @@ botonesIdioma.forEach(function(boton) {
 
             idiomaSeleccionado.textContent = "Français";
 
-            rutaAudio = "audios/français/frances.mp3";
+            rutaAudio = "audios/français/audio-frances.mp3";
 
         }
 
